@@ -1,0 +1,58 @@
+ASSISTENTE FP 2.0 - COMANDOS DE VOZ + IA LOCAL MAIS CAPAZ
+======================================================
+
+NOVO: interface para Windows, sem precisar do VS Code.
+CONFERIDO: sintaxe e testes internos dos comandos. NAO testado no Windows real.
+
+1) Instale o Ollama (voce ja tem): https://ollama.com/download/windows
+2) Extrair este ZIP para uma pasta normal (exemplo: Documentos\AssistenteFP).
+3) Dar dois cliques em "Instalar modelo melhor.bat" para baixar qwen3:4b-instruct (~2,5 GB).
+   O modelo atual qwen2.5:1.5b continua disponivel se o PC for fraco.
+4) Dar dois cliques em "Instalar voz.bat". Instala pacotes Python gratuitos.
+   Se ja tiver Python instalado, o instalador cria uma .venv nesta pasta.
+5) Dar dois cliques em "Abrir Assistente.bat" para abrir o aplicativo fora do VS Code.
+6) Clique em "🎙 Falar", diga um comando e clique em "■ Parar".
+   A transcricao acontece no seu computador. No primeiro uso, o programa
+   baixa automaticamente o modelo de voz Whisper base (internet necessaria).
+   Maximo 12 segundos por gravacao. Nao ha escuta permanente.
+7) Voce tambem pode escrever no chat normalmente.
+
+COMANDOS:
+ - Abra o Spotify
+ - Abra o Discord
+ - Abra o Google Chrome
+ - Abra a calculadora
+ - Abra a pasta Downloads
+ - Procure meu curriculo
+ - Crie uma pasta chamada Faculdade em Documentos
+
+COMO FUNCIONA:
+ - Para programas, pesquisa os atalhos do Menu Iniciar (do usuario e do Windows).
+ - Se o atalho nao existe, diz que nao achou em vez de inventar o programa.
+ - Para nomes parecidos, pede confirmacao na janela.
+ - Para arquivos, busca em Documentos, Downloads e Area de Trabalho e deixa escolher.
+ - A IA recebe somente a frase digitada/falada: NUNCA o conteudo dos seus arquivos.
+ - Nao executa comandos de PowerShell, scripts ou shell sugeridos pela IA.
+ - Reconhecimento de voz por Faster Whisper (CPU local, idioma pt), sem chave ou API paga.
+ - A qualidade depende do microfone e da velocidade do computador.
+ - O atalho Ctrl+Shift+Espaco alterna microfone, COM A JANELA DO APP EM FOCO.
+ - O app nao responde em voz alta; a voz controla o aplicativo e transcreve comandos.
+
+LIMITACOES:
+ - Python/Tkinter e Ollama precisam estar instalados e em execucao (Ollama ativo).
+ - Alguns apps instalados nao criam atalhos no Menu Iniciar: nesses casos nao abre.
+ - No primeiro uso de voz baixa Whisper 'base'; uso posterior pode ser offline.
+ - Em processadores antigos a voz e o modelo maior podem demorar.
+ - Se "Instalar voz.bat" falhar em Python 3.14, tente Python 3.12/3.13 em outro
+   ambiente virtual. O chat por texto continua funcionando.
+ - Nada e ouvido em segundo plano: voce escolhe quando ligar e desligar o microfone.
+ - A nova IA e melhor que 1.5B em geral, mas nao e infalivel.
+ - Nenhum EXE pre-compilado acompanha este pacote: o .bat abre a GUI local.
+
+Arquivos:
+ assistente_gui.pyw - interface Python
+ voz_local.py - grava / reconhece voz
+ Instalar modelo melhor.bat - instala modelo Qwen3 no Ollama
+ Instalar voz.bat - dependencias Python para microfone
+ Abrir Assistente.bat - abre GUI sem VS Code
+ requisitos_voz.txt - lista das bibliotecas gratuitas
